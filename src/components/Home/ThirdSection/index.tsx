@@ -3,7 +3,7 @@ import ParallaxText from "@/components/ParallaxText";
 
 export const ThirdSection = () => {
   return (
-    <div className="w-full flex flex-col justify-center gap-6 py-16">
+    <div className="w-full flex flex-col justify-center gap-6 lg:py-12 md:py-8 py-4 -z-10">
       <ParallaxText baseVelocity={-2}>
         <span className="flex gap-2 items-end">
           <strong>98</strong>

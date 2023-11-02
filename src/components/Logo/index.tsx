@@ -2,14 +2,9 @@ interface logoProps {
   color: string;
 }
 
-export const Logo = ({color}: logoProps) => {
+export const Logo = ({ color }: logoProps) => {
   return (
-    <svg
-      width="64"
-      height="65"
-      viewBox="0 0 64 65"
-      fill="none"
-    >
+    <svg width="64" height="65" viewBox="0 0 64 65" fill="none">
       <g clip-path="url(#clip0_415_6762)">
         <rect y="0.5" width="64" height="64" rx="32" fill={color} />
         <path

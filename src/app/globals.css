@@ -27,19 +27,11 @@ body {
 
 h1,
 .title {
-  @apply text-8xl font-bold text-fontcolor-50 flex gap-2;
-}
-
-.progress {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: var(--accent);
-  bottom: 100px;
+  @apply lg:text-8xl md:text-7xl text-3xl font-bold text-fontcolor-50 flex gap-2;
 }
 
 .parallax {
+  z-index: -1;
   overflow: hidden;
   letter-spacing: -2px;
   line-height: 0.8;
@@ -64,6 +56,10 @@ h1,
   @apply font-medium text-2xl text-white;
 }
 
+.text2 {
+  @apply font-semibold text-2xl text-fontcolor-50;
+}
+
 .text3 {
   @apply font-semibold text-4xl text-fontcolor-50;
 }
@@ -73,7 +69,7 @@ h1,
 }
 
 strong {
-  @apply font-bold text-8xl text-fontcolor-100;
+  @apply font-bold lg:text-[2.5rem] md:text-4xl text-2xl text-fontcolor-100;
 }
 
 .hover-underline-animation {
@@ -97,4 +93,28 @@ strong {
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.backgroundHome {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.stickyHeader {
+  @apply py-2;
+  background-color: rgba(25, 37, 54, 0.2);
+}
+
+header {
+  transition: all 0.3s ease-in-out;
+}
+
+header#desktop {
+  @apply hidden lg:flex;
+}
+
+header#mobile {
+  @apply flex lg:hidden;
 }
