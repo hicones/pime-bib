@@ -82,7 +82,7 @@ export const ContactUs = () => {
         <div className="flex flex-col gap-3">
           <label htmlFor="email">EMAIL *</label>
           <input
-            type="text"
+            type="email"
             id="email"
             className="p-2 border-b border-b-fontcolor-100 outline-none focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300"
             placeholder="digite seu email"
