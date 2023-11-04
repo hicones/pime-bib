@@ -57,9 +57,9 @@ export const Header = () => {
               />
             </span>
           </div>
-          <a href="#contactUs" className="text1 hover-underline-animation">
+          <Link href="/#contactUs" className="text1 hover-underline-animation">
             Indique
-          </a>
+          </Link>
         </div>
       </div>
       {open && (
