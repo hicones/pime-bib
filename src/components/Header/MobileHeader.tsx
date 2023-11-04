@@ -60,7 +60,7 @@ export const MobileHeader = () => {
           transition={{
             duration: 0.4,
           }}
-          className="fixed top-0 right-0 w-full h-screen bg-background-700 flex items-center justify-center"
+          className={`fixed top-0 right-0 w-full h-screen bg-background-700 flex items-center justify-center`}
         >
           <motion.ul
             initial={{

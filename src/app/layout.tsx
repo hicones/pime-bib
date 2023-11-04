@@ -3,6 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { MobileHeader } from "@/components/Header/MobileHeader";
+import { Footer } from "@/components/Home/Footer";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const generalSans = localFont({ src: "../fonts/GeneralSans.ttf" });
 
@@ -23,6 +27,8 @@ export default function RootLayout({
         <Header />
         <MobileHeader />
         {children}
+        <Footer />
+        <ToastContainer position="top-center" />
       </body>
     </html>
   );

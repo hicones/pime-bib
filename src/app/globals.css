@@ -25,11 +25,6 @@ body {
   @apply bg-background-100 text-fontcolor-100;
 }
 
-h1,
-.title {
-  @apply lg:text-8xl md:text-7xl text-3xl font-bold text-fontcolor-50 flex gap-2;
-}
-
 .parallax {
   z-index: -1;
   overflow: hidden;
@@ -52,6 +47,11 @@ h1,
   align-items: center;
 }
 
+h1,
+.title {
+  @apply lg:text-8xl md:text-7xl text-3xl font-bold text-fontcolor-50 flex gap-2;
+}
+
 .text1 {
   @apply font-medium text-2xl text-white;
 }
@@ -66,6 +66,18 @@ h1,
 
 .text4 {
   @apply font-semibold text-4xl text-fontcolor-100;
+}
+
+.text5 {
+  @apply lg:text-[5rem] md:text-4xl text-2xl font-bold;
+}
+
+.text6 {
+  @apply font-normal lg:text-3xl md:text-xl text-base;
+}
+
+label {
+  @apply font-semibold text-3xl text-fontcolor-100;
 }
 
 strong {
@@ -117,4 +129,26 @@ header#desktop {
 
 header#mobile {
   @apply flex lg:hidden;
+}
+
+header.showMenu {
+  @apply flex;
+}
+
+.formButton {
+  @apply bg-background-100 text-fontcolor-100 p-2 border border-fontcolor-100 font-medium text-5xl relative;
+  box-shadow: 16px 21px 0px 0px #2ca7eb;
+}
+
+.paulistinho {
+  @apply absolute bottom-20 left-8 lg:w-52 w-36 md:w-44;
+}
+
+.checkmark {
+  @apply p-2 cursor-pointer border border-fontcolor-100;
+  transition: all 0.2s ease-in-out;
+}
+
+.checked {
+  box-shadow: 8px 8px 0px 0px #2ca7eb;
 }
