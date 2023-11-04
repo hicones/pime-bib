@@ -33,7 +33,13 @@ export const Header = () => {
           href="/"
           className="flex-1 flex items-center text-fontcolor-50 gap-2 font-bold text-5xl"
         >
-          <Image src="/logo.png" alt="logo" width={64} height={64} />
+          <Image
+            src="/logo.jpg"
+            alt="logo"
+            width={64}
+            height={64}
+            className="rounded-full"
+          />
           BiB
         </Link>
         <div className="flex justify-center items-center pb-2 border-b border-b-fontcolor-50 w-1/4 focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300">

@@ -129,6 +129,7 @@ header#desktop {
 
 header#mobile {
   @apply flex lg:hidden;
+  z-index: 1;
 }
 
 header.showMenu {
@@ -141,7 +142,7 @@ header.showMenu {
 }
 
 .paulistinho {
-  @apply absolute bottom-20 left-8 lg:w-52 w-36 md:w-44;
+  @apply absolute md:bottom-20 bottom-24 md:left-8 left-4 lg:w-52 w-36 md:w-44;
 }
 
 .checkmark {
@@ -151,4 +152,8 @@ header.showMenu {
 
 .checked {
   box-shadow: 8px 8px 0px 0px #2ca7eb;
+}
+
+footer {
+  z-index: 0;
 }

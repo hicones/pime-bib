@@ -36,7 +36,13 @@ export const MobileHeader = () => {
         href="/"
         className="ml-4 flex-1 flex items-center text-fontcolor-50 gap-2 font-bold text-5xl"
       >
-        <Image src="/logo.png" alt="logo" width={64} height={64} />
+        <Image
+          src="/logo.jpg"
+          alt="logo"
+          width={64}
+          height={64}
+          className="rounded-full"
+        />
         BiB
       </Link>
       <MenuButton
