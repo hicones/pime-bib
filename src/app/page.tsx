@@ -1,3 +1,4 @@
+import { Categories } from "@/components/Home/Categories";
 import { ContactUs } from "@/components/Home/ContactUs";
 import { FirstSection } from "@/components/Home/FirstSection";
 import { Footer } from "@/components/Home/Footer";
@@ -11,6 +12,7 @@ export default function Home() {
         <FirstSection />
         <SecondSection />
         <ThirdSection />
+        <Categories />
         <ContactUs />
       </main>
       <Footer />

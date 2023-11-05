@@ -157,3 +157,68 @@ header.showMenu {
 footer {
   z-index: 0;
 }
+
+/*  Categorias */
+
+.categoryContainer {
+  @apply w-full flex flex-col lg:flex-row px-8 md:px-8 lg:px-12 lg:py-36 md:py-28 py-10 lg:justify-between gap-12;
+}
+
+.categoryContainerText {
+  @apply flex flex-col lg:gap-10 gap-8 w-full md:max-w-xl;
+}
+
+.categoryContainerText h2 {
+  @apply lg:text-7xl md:text-6xl text-2xl font-bold;
+}
+
+.categoryContainerText p {
+  @apply lg:text-3xl md:text-2xl text-base font-medium;
+}
+
+.categoryImage {
+  @apply lg:h-[800px] md:h-[400px] h-[14rem] lg:w-[40%] w-full flex items-center justify-center cursor-pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.categoryImage span {
+  @apply text-fontcolor-50 font-medium md:text-4xl text-base px-2 py-4 border border-fontcolor-50;
+}
+
+.categoryImage:hover {
+  background-position: left !important;
+}
+
+.desktopLink {
+  @apply hidden lg:flex max-w-fit items-center gap-2 font-medium text-4xl hover:border-2 hover:border-background-100 hover:px-6;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobileLink {
+  @apply flex lg:hidden max-w-fit self-end items-center gap-2 font-medium text-4xl hover:border-2 hover:border-background-100 hover:px-6;
+  transition: all 0.2s ease-in-out;
+}
+
+/*  Sombras */
+
+.shadowRight {
+  box-shadow: 20px 20px 0px 0px #192536;
+}
+
+.shadowRight:hover {
+  box-shadow: 20px 20px 0px 0px #fffefb;
+}
+
+.WhiteShadowRight {
+  box-shadow: 20px 20px 0px 0px #fffefb;
+}
+
+.WhiteShadowLeft {
+  box-shadow: -20px 20px 0px 0px #fffefb;
+
+  @media (max-width: 1024px) {
+    box-shadow: 20px 20px 0px 0px #fffefb;
+  }
+}
+
+/*  - - - - - - - - - - - - - - -  */
