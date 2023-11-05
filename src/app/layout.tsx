@@ -27,7 +27,6 @@ export default function RootLayout({
         <Header />
         <MobileHeader />
         {children}
-        <Footer />
         <ToastContainer position="top-center" />
       </body>
     </html>
