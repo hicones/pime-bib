@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export const Header = () => {
@@ -17,9 +17,11 @@ export const Header = () => {
     }
   };
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", changeColor);
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", changeColor);
+    }
+  });
 
   return (
     <header

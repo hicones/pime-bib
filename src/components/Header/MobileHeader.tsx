@@ -5,13 +5,10 @@ import Image from "next/image";
 import { MenuButton } from "../MenuButton";
 
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 export const MobileHeader = () => {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
-
-  const pathname = usePathname();
 
   const changeColor = () => {
     if (window.scrollY >= 100) {
@@ -21,9 +18,11 @@ export const MobileHeader = () => {
     }
   };
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", changeColor);
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", changeColor);
+    }
+  });
 
   return (
     <header
@@ -66,7 +65,7 @@ export const MobileHeader = () => {
           transition={{
             duration: 0.4,
           }}
-          className={`fixed top-0 right-0 w-full h-screen bg-background-700 flex items-center justify-center`}
+          className={`fixed top-0 right-0 w-full h-screen bg-background-700 flex flex-col items-center justify-center gap-14`}
         >
           <motion.ul
             initial={{
@@ -78,45 +77,47 @@ export const MobileHeader = () => {
             transition={{
               duration: 1,
             }}
-            className="mt-6 flex flex-col items-center justify-end w-ful gap-8"
+            className="mt-6 flex flex-col justify-end w-ful gap-8"
           >
+            <p className="text-5xl font-bold text-fontcolor-50">CATEGORIAS</p>
             <motion.li
-              className="text2 hover-underline-animation after:bg-background-300"
+              className="text2 w-fit border-b-[3px] border-b-background-300"
               onClick={() => setOpen(false)}
             >
               <Link href={""}>DESTAQUES</Link>
             </motion.li>
             <motion.li
-              className="text2 hover-underline-animation after:bg-background-400"
+              className="text2 w-fit border-b-[3px] border-b-background-400"
               onClick={() => setOpen(false)}
             >
               <Link href={"/gratuitos"}>GRATUITOS</Link>
             </motion.li>
             <motion.li
-              className="text2 hover-underline-animation after:bg-background-500"
+              className="text2 w-fit border-b-[3px] border-b-background-500"
               onClick={() => setOpen(false)}
             >
               <Link href={""}>RESTAURANTES</Link>
             </motion.li>
             <motion.li
-              className="text2 hover-underline-animation after:bg-background-600"
+              className="text2 w-fit border-b-[3px] border-b-background-600"
               onClick={() => setOpen(false)}
             >
               <Link href={""}>BARES</Link>
             </motion.li>
             <motion.li
-              className="text2 hover-underline-animation after:bg-background-700"
+              className="text2 w-fit border-b-[3px] border-b-background-100"
               onClick={() => setOpen(false)}
             >
               <Link href={"#places"}>LUGARES</Link>
             </motion.li>
-            <motion.li
-              className="text2 hover-underline-animation after:bg-background-700"
-              onClick={() => setOpen(false)}
-            >
-              <Link href={"/#contactUs"}>INDIQUE</Link>
-            </motion.li>
           </motion.ul>
+          <Link
+            href={"/#contactUs"}
+            onClick={() => setOpen(false)}
+            className="text-5xl font-bold text-fontcolor-50"
+          >
+            INDIQUE
+          </Link>
         </motion.div>
       )}
     </header>
