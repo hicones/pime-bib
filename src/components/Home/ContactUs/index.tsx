@@ -56,7 +56,7 @@ export const ContactUs = () => {
   return (
     <section
       id="contactUs"
-      className="flex flex-col lg:pt-[7.5rem] pt-12 px-4 items-center gap-24 mb-12"
+      className="flex flex-col lg:pt-[7.5rem] pt-12 containerPadding items-center gap-24 mb-12"
     >
       <p className="font-bold lg:text-8xl md:text-5xl text-2xl text-fontcolor-100 max-w-screen-xl">
         <span className="text-background-700">FALE CONOSCO!</span> DEIXE A SUA

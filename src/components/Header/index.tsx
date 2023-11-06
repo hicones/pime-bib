@@ -33,7 +33,7 @@ export const Header = () => {
       <div className="w-full flex items-center justify-between">
         <Link
           href="/"
-          className="flex-1 flex items-center text-fontcolor-50 gap-2 font-bold text-5xl"
+          className="flex-1 flex items-center text-fontcolor-100 gap-2 font-bold text-5xl"
         >
           <Image
             src="/logo.jpg"
@@ -44,13 +44,13 @@ export const Header = () => {
           />
           BiB
         </Link>
-        <div className="flex justify-center items-center pb-2 border-b border-b-fontcolor-50 w-1/4 focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300">
+        <div className="flex justify-center items-center pb-2 border-b border-b-fontcolor-100 w-1/4 focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300">
           <input
             type="search"
             placeholder="O que você quer conhecer hoje?"
-            className="w-full bg-transparent border-none outline-none text1 placeholder:text-white"
+            className="w-full bg-transparent border-none outline-none text1 placeholder:text-fontcolor-100"
           />
-          <AiOutlineSearch size={28} color="#FFFEFB" />
+          <AiOutlineSearch size={28} color="#192536" />
         </div>
         <div className="flex-1 flex justify-end gap-16 items-center">
           <div

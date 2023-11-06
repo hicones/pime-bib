@@ -53,11 +53,11 @@ h1,
 }
 
 .text1 {
-  @apply font-medium text-2xl text-white;
+  @apply font-medium text-2xl text-fontcolor-100;
 }
 
 .text2 {
-  @apply font-semibold text-2xl text-fontcolor-50;
+  @apply font-semibold text-2xl text-fontcolor-100;
 }
 
 .text3 {
@@ -97,7 +97,7 @@ strong {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #192536;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -108,10 +108,7 @@ strong {
 }
 
 .backgroundHome {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: bottom;
+  @apply bg-no-repeat bg-fixed lg:bg-center bg-cover;
 }
 
 .stickyHeader {
@@ -158,10 +155,14 @@ footer {
   z-index: 0;
 }
 
+.containerPadding {
+  @apply lg:px-20 md:px-10 px-4;
+}
+
 /*  Categorias */
 
 .categoryContainer {
-  @apply w-full flex flex-col lg:flex-row px-8 md:px-8 lg:px-12 lg:py-36 md:py-28 py-10 lg:justify-between gap-12;
+  @apply w-full flex flex-col lg:flex-row lg:py-36 md:py-28 py-10 lg:justify-between gap-12 containerPadding;
 }
 
 .categoryContainerText {
@@ -179,6 +180,7 @@ footer {
 .categoryImage {
   @apply lg:h-[800px] md:h-[400px] h-[14rem] lg:w-[40%] w-full flex items-center justify-center cursor-pointer;
   transition: all 0.4s ease-in-out;
+  background-size: 100% auto;
 }
 
 .categoryImage span {
@@ -186,7 +188,8 @@ footer {
 }
 
 .categoryImage:hover {
-  background-position: left !important;
+  background-size: 180% auto !important;
+  transition: all 0.4s ease-in-out;
 }
 
 .desktopLink {
