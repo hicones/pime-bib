@@ -9,7 +9,7 @@ export const Logo = ({ color }: logoProps) => {
       height="85"
       viewBox="0 0 85 85"
       fill="none"
-      className="rounded-full border-2 border-fontcolor-50"
+      className="rounded-full border-2 border-fontcolor-100"
     >
       <g clip-path="url(#clip0_720_25803)">
         <rect width="85" height="85" rx="42.5" />
