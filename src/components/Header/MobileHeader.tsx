@@ -75,31 +75,31 @@ export const MobileHeader = () => {
           >
             <p className="text-5xl font-bold text-fontcolor-50">CATEGORIAS</p>
             <motion.li
-              className="text2 w-fit border-b-[3px] border-b-background-300"
+              className="text2White w-fit border-b-[3px] border-b-background-300"
               onClick={() => setOpen(false)}
             >
               <Link href={""}>DESTAQUES</Link>
             </motion.li>
             <motion.li
-              className="text2 w-fit border-b-[3px] border-b-background-400"
+              className="text2White w-fit border-b-[3px] border-b-background-400"
               onClick={() => setOpen(false)}
             >
               <Link href={"/gratuitos"}>GRATUITOS</Link>
             </motion.li>
             <motion.li
-              className="text2 w-fit border-b-[3px] border-b-background-500"
+              className="text2White w-fit border-b-[3px] border-b-background-500"
               onClick={() => setOpen(false)}
             >
               <Link href={""}>RESTAURANTES</Link>
             </motion.li>
             <motion.li
-              className="text2 w-fit border-b-[3px] border-b-background-600"
+              className="text2White w-fit border-b-[3px] border-b-background-600"
               onClick={() => setOpen(false)}
             >
               <Link href={""}>BARES</Link>
             </motion.li>
             <motion.li
-              className="text2 w-fit border-b-[3px] border-b-background-100"
+              className="text2White w-fit border-b-[3px] border-b-background-100"
               onClick={() => setOpen(false)}
             >
               <Link href={"#places"}>LUGARES</Link>

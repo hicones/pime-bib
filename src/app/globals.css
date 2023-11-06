@@ -60,6 +60,10 @@ h1,
   @apply font-semibold text-2xl text-fontcolor-100;
 }
 
+.text2White {
+  @apply font-semibold text-2xl text-fontcolor-50;
+}
+
 .text3 {
   @apply font-semibold text-4xl text-fontcolor-50;
 }
