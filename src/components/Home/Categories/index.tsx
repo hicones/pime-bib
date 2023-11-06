@@ -44,7 +44,7 @@ export const Categories = () => {
       </div>
 
       <div className="categoryContainer bg-background-600">
-        <div className="categoryImage WhiteShadowRight">
+        <div className="categoryImage WhiteShadowLeft">
           <motion.div
             style={{
               background:
@@ -120,7 +120,7 @@ export const Categories = () => {
       </div>
 
       <div className="categoryContainer bg-background-400">
-        <div className="categoryImage WhiteShadowRight">
+        <div className="categoryImage WhiteShadowLeft">
           <motion.div
             style={{
               background:
