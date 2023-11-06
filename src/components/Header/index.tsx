@@ -4,6 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Logo } from "../Logo";
 
 export const Header = () => {
   const [sticky, setSticky] = useState(false);
@@ -35,14 +36,7 @@ export const Header = () => {
           href="/"
           className="flex-1 flex items-center text-fontcolor-100 gap-2 font-bold text-5xl"
         >
-          <Image
-            src="/logo.jpg"
-            alt="logo"
-            width={64}
-            height={64}
-            className="rounded-full"
-          />
-          BiB
+          <Logo />
         </Link>
         <div className="flex justify-center items-center pb-2 border-b border-b-fontcolor-100 w-1/4 focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300">
           <input

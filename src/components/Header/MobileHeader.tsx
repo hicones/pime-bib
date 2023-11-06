@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MenuButton } from "../MenuButton";
 
 import { motion } from "framer-motion";
+import { Logo } from "../Logo";
 
 export const MobileHeader = () => {
   const [sticky, setSticky] = useState(false);
@@ -35,14 +36,7 @@ export const MobileHeader = () => {
         href="/"
         className="ml-4 flex-1 flex items-center text-fontcolor-50 gap-2 font-bold text-5xl"
       >
-        <Image
-          src="/logo.jpg"
-          alt="logo"
-          width={64}
-          height={64}
-          className="rounded-full"
-        />
-        BiB
+        <Logo />
       </Link>
       <MenuButton
         isOpen={open}

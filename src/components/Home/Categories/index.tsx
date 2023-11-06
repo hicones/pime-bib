@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,16 +20,21 @@ export const Categories = () => {
             <GoArrowUpRight size={52} />
           </Link>
         </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/destaque.png), lightgray 50%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="categoryImage shadowRight"
-        >
+        <div className="categoryImage shadowRight">
+          <motion.div
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/destaque.png), lightgray 50%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              width: "100%",
+              height: "100%",
+            }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          ></motion.div>
           <span>MUGSP</span>
         </div>
         <Link href="/destaques" className="mobileLink">
@@ -37,18 +44,25 @@ export const Categories = () => {
       </div>
 
       <div className="categoryContainer bg-background-600">
-        <div
-          style={{
-            background:
-              "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/bares.png), lightgray 50%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="categoryImage WhiteShadowLeft"
-        >
+        <div className="categoryImage WhiteShadowRight">
+          <motion.div
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/bares.png), lightgray 50%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              zIndex: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            whileHover={{ scale: 1.3 }}
+            transition={{ duration: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          ></motion.div>
           <span>RIVIERA</span>
         </div>
+
         <div className="categoryContainerText items-end justify-end text-fontcolor-50 -order-1 lg:order-1">
           <h2 className="text-left w-full">BARES</h2>
           <p>
@@ -79,18 +93,26 @@ export const Categories = () => {
             <GoArrowUpRight size={52} />
           </Link>
         </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/restaurantes.png), lightgray 50%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="categoryImage WhiteShadowRight"
-        >
+
+        <div className="categoryImage WhiteShadowRight">
+          <motion.div
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/restaurantes.png), lightgray 50%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              zIndex: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            whileHover={{ scale: 1.3 }}
+            transition={{ duration: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          ></motion.div>
           <span>A CASA DO PORCO</span>
         </div>
+
         <Link href="/restaurantes" className="mobileLink text-fontcolor-50">
           VER TUDO
           <GoArrowUpRight size={52} />
@@ -98,18 +120,25 @@ export const Categories = () => {
       </div>
 
       <div className="categoryContainer bg-background-400">
-        <div
-          style={{
-            background:
-              "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/gratuitos.png), lightgray 50%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="categoryImage WhiteShadowRight"
-        >
+        <div className="categoryImage WhiteShadowRight">
+          <motion.div
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/gratuitos.png), lightgray 50%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              zIndex: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            whileHover={{ scale: 1.3 }}
+            transition={{ duration: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          ></motion.div>
           <span>PARQUE TRIANON</span>
         </div>
+
         <div className="categoryContainerText items-end justify-end text-fontcolor-50 -order-1 lg:order-1">
           <h2 className="text-left w-full">GRATUITOS</h2>
           <p>Parques, eventos e passeios que valem a pena conhecer.</p>
@@ -138,16 +167,22 @@ export const Categories = () => {
             <GoArrowUpRight size={52} />
           </Link>
         </div>
-        <div
-          style={{
-            background:
-              "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/lugares.png), lightgray 50%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className="categoryImage WhiteShadowRight"
-        >
+        <div className="categoryImage WhiteShadowRight">
+          <motion.div
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(/categories/lugares.png), lightgray 50%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              zIndex: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5 }}
+            whileTap={{ scale: 0.9 }}
+          ></motion.div>
           <span>SAMPA SKY</span>
         </div>
         <Link href="/lugares" className="mobileLink text-fontcolor-50">

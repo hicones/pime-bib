@@ -121,11 +121,11 @@ header {
 }
 
 header#desktop {
-  @apply hidden lg:flex;
+  @apply hidden lg:flex z-10;
 }
 
 header#mobile {
-  @apply flex lg:hidden;
+  @apply flex lg:hidden z-10;
   z-index: 1;
 }
 
@@ -178,18 +178,13 @@ footer {
 }
 
 .categoryImage {
-  @apply lg:h-[800px] md:h-[400px] h-[14rem] lg:w-[40%] w-full flex items-center justify-center cursor-pointer;
+  @apply lg:h-[800px] md:h-[400px] h-[14rem] lg:w-[40%] w-full flex items-center justify-center cursor-pointer overflow-hidden;
   transition: all 0.4s ease-in-out;
   background-size: 100% auto;
 }
 
 .categoryImage span {
-  @apply text-fontcolor-50 font-medium md:text-4xl text-base px-2 py-4 border border-fontcolor-50;
-}
-
-.categoryImage:hover {
-  background-size: 180% auto !important;
-  transition: all 0.4s ease-in-out;
+  @apply text-fontcolor-50 font-medium md:text-4xl text-base px-2 py-4 border border-fontcolor-50 absolute;
 }
 
 .desktopLink {
