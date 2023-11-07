@@ -49,7 +49,7 @@ body {
 
 h1,
 .title {
-  @apply lg:text-8xl md:text-7xl text-3xl font-bold text-fontcolor-50 flex gap-2;
+  @apply lg:text-8xl md:text-7xl text-3xl font-bold flex gap-2;
 }
 
 .text1 {
@@ -78,6 +78,10 @@ h1,
 
 .text6 {
   @apply font-normal lg:text-3xl md:text-xl text-base;
+}
+
+.text7 {
+  @apply font-medium lg:text-8xl md:text-5xl text-4xl;
 }
 
 label {
@@ -224,3 +228,25 @@ footer {
 }
 
 /*  - - - - - - - - - - - - - - -  */
+
+.pageTitle {
+  @apply flex items-center justify-start uppercase w-full lg:mt-52 md:mt-40 mt-36 containerPadding mb-12;
+}
+
+.cardActive {
+  @apply border-b-2 border-background-600 h-[25vh];
+}
+
+.cardActive div {
+  @apply border-t-2 border-l-2 border-background-600;
+}
+
+/*  - - - - - - - - - - - - - - -  */
+
+.motion-box {
+  width: 100%;
+  max-width: 500px;
+  height: 420px;
+  border-radius: 8px;
+  background: #00d2ff;
+}

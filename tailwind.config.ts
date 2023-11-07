@@ -20,7 +20,7 @@ const config: Config = {
           300: "#FCCE0B",
           400: "#1A7F43",
           500: "#FF7525",
-          600: "#FF2D93",
+          600: "#E0006D",
           700: "#2CA7EB",
         },
         fontcolor: {

@@ -1,15 +1,18 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { MenuButton } from "../MenuButton";
 
 import { motion } from "framer-motion";
 import { Logo } from "../Logo";
+import { usePathname } from "next/navigation";
+import { getBackground } from "@/utils/getBackground";
 
 export const MobileHeader = () => {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const pathname = usePathname();
 
   const changeColor = () => {
     if (window.scrollY >= 100) {
@@ -36,7 +39,7 @@ export const MobileHeader = () => {
         href="/"
         className="ml-4 flex-1 flex items-center text-fontcolor-50 gap-2 font-bold text-5xl"
       >
-        <Logo />
+        <Logo color={getBackground(pathname)} />
       </Link>
       <MenuButton
         isOpen={open}
@@ -78,7 +81,7 @@ export const MobileHeader = () => {
               className="text2White w-fit border-b-[3px] border-b-background-300"
               onClick={() => setOpen(false)}
             >
-              <Link href={""}>DESTAQUES</Link>
+              <Link href={"/destaques"}>DESTAQUES</Link>
             </motion.li>
             <motion.li
               className="text2White w-fit border-b-[3px] border-b-background-400"
@@ -90,19 +93,19 @@ export const MobileHeader = () => {
               className="text2White w-fit border-b-[3px] border-b-background-500"
               onClick={() => setOpen(false)}
             >
-              <Link href={""}>RESTAURANTES</Link>
+              <Link href={"/restaurantes"}>RESTAURANTES</Link>
             </motion.li>
             <motion.li
               className="text2White w-fit border-b-[3px] border-b-background-600"
               onClick={() => setOpen(false)}
             >
-              <Link href={""}>BARES</Link>
+              <Link href={"/bares"}>BARES</Link>
             </motion.li>
             <motion.li
               className="text2White w-fit border-b-[3px] border-b-background-100"
               onClick={() => setOpen(false)}
             >
-              <Link href={"#places"}>LUGARES</Link>
+              <Link href={"/historico"}>HISTÓRICO</Link>
             </motion.li>
           </motion.ul>
           <Link

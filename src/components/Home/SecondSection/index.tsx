@@ -10,7 +10,7 @@ export const SecondSection = () => {
         seu guia, sua vibe!
       </p>
       <ParallaxText baseVelocity={2}>
-        <span className="title">DESCUBRA O CENTRO</span>
+        <span className="title text-fontcolor-50">DESCUBRA O CENTRO</span>
         <DivideStar color="#FFFEFB" />
       </ParallaxText>
     </div>

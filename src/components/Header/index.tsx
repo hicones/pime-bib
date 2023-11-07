@@ -3,12 +3,14 @@ import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Logo } from "../Logo";
+import { usePathname } from "next/navigation";
+import { getBackground } from "@/utils/getBackground";
 
 export const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const changeColor = () => {
     if (window.scrollY >= 100) {
@@ -36,7 +38,7 @@ export const Header = () => {
           href="/"
           className="flex-1 flex items-center text-fontcolor-100 gap-2 font-bold text-5xl"
         >
-          <Logo />
+          <Logo color={getBackground(pathname)} />
         </Link>
         <div className="flex justify-center items-center pb-2 border-b border-b-fontcolor-100 w-1/4 focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300">
           <input
@@ -67,19 +69,19 @@ export const Header = () => {
       {open && (
         <ul className="mt-6 flex items-center justify-end w-ful gap-14">
           <li className="text2 hover-underline-animation after:bg-background-300">
-            <Link href={""}>DESTAQUES</Link>
+            <Link href={"/destaques"}>DESTAQUES</Link>
           </li>
           <li className="text2 hover-underline-animation after:bg-background-400">
-            <Link href={""}>GRATUITOS</Link>
+            <Link href={"/gratuitos"}>GRATUITOS</Link>
           </li>
           <li className="text2 hover-underline-animation after:bg-background-500">
-            <Link href={""}>RESTAURANTES</Link>
+            <Link href={"/restaurantes"}>RESTAURANTES</Link>
           </li>
           <li className="text2 hover-underline-animation after:bg-background-600">
-            <Link href={""}>BARES</Link>
+            <Link href={"/bares"}>BARES</Link>
           </li>
           <li className="text2 hover-underline-animation after:bg-background-700">
-            <Link href={""}>LUGARES</Link>
+            <Link href={"/historico"}>HISTÓRICO</Link>
           </li>
         </ul>
       )}

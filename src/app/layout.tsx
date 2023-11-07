@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <link rel="icon" href="/pime_logo.svg" sizes="any" />
+      <link rel="icon" href="/paulistinho.svg" sizes="any" />
       <body className={generalSans.className}>
         <Header />
         <MobileHeader />

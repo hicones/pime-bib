@@ -155,7 +155,7 @@ export const Categories = () => {
 
       <div className="categoryContainer bg-background-700">
         <div className="categoryContainerText items-end justify-end text-fontcolor-50">
-          <h2 className="text-left w-full">LUGARES</h2>
+          <h2 className="text-left w-full">HISTÓRICO</h2>
           <p>
             Onde museus e pontos turísticos se unem para contar histórias
             fascinantes. Cada obra de arte, cada construção antiga é uma porta
@@ -185,7 +185,7 @@ export const Categories = () => {
           ></motion.div>
           <span>SAMPA SKY</span>
         </div>
-        <Link href="/lugares" className="mobileLink text-fontcolor-50">
+        <Link href="/historico" className="mobileLink text-fontcolor-50">
           VER TUDO
           <GoArrowUpRight size={52} />
         </Link>
