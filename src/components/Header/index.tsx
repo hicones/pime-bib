@@ -1,16 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
-import { AiOutlineSearch } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useState } from "react";
-import { Logo } from "../Logo";
-import { usePathname } from "next/navigation";
-import { getBackground } from "@/utils/getBackground";
+import { MenuButton } from "../MenuButton";
+import { motion } from "framer-motion";
 
 export const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
 
   const changeColor = () => {
     if (window.scrollY >= 100) {
@@ -33,58 +30,68 @@ export const Header = () => {
         sticky ? "stickyHeader" : ""
       } flex flex-col w-full fixed py-10 px-20`}
     >
-      <div className="w-full flex items-center justify-between">
-        <Link
-          href="/"
-          className="flex-1 flex items-center text-fontcolor-100 gap-2 font-bold text-5xl"
+      <nav className="w-full flex justify-center">
+        <ul
+          className={`${
+            sticky ? "hidden" : "flex"
+          } w-full list-none justify-between text-fontcolor-50`}
         >
-          <Logo color={getBackground(pathname)} />
-        </Link>
-        <div className="flex justify-center items-center pb-2 border-b border-b-fontcolor-100 w-1/4 focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300">
-          <input
-            type="search"
-            placeholder="O que você quer conhecer hoje?"
-            className="w-full bg-transparent border-none outline-none text1 placeholder:text-fontcolor-100"
-          />
-          <AiOutlineSearch size={28} color="#192536" />
-        </div>
-        <div className="flex-1 flex justify-end gap-16 items-center">
-          <div
-            className="hover-underline-animation cursor-pointer"
-            onClick={() => setOpen(!open)}
-          >
-            <span className="text1 flex items-center gap-2">
-              Categorias{" "}
-              <IoIosArrowDown
-                size={20}
-                className={`transition ${open ? "rotate-180" : ""}`}
-              />
-            </span>
-          </div>
-          <Link href="/#contactUs" className="text1 hover-underline-animation">
-            Indique
-          </Link>
-        </div>
-      </div>
-      {open && (
-        <ul className="mt-6 flex items-center justify-end w-ful gap-14">
-          <li className="text2 hover-underline-animation after:bg-background-300">
-            <Link href={"/destaques"}>DESTAQUES</Link>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <Link href="/destaques">DESTAQUES</Link>
           </li>
-          <li className="text2 hover-underline-animation after:bg-background-400">
-            <Link href={"/gratuitos"}>GRATUITOS</Link>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <Link href="/destaques">BARES</Link>
           </li>
-          <li className="text2 hover-underline-animation after:bg-background-500">
-            <Link href={"/restaurantes"}>RESTAURANTES</Link>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <Link href="/destaques">RESTAURANTES</Link>
           </li>
-          <li className="text2 hover-underline-animation after:bg-background-600">
-            <Link href={"/bares"}>BARES</Link>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <span>pesquise</span>
           </li>
-          <li className="text2 hover-underline-animation after:bg-background-700">
-            <Link href={"/historico"}>HISTÓRICO</Link>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <Link href="/destaques">CULTURA</Link>
+          </li>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <Link href="/destaques">HISTÓRICO</Link>
+          </li>
+          <li className="text1 hover-underline-animation after:bg-fontcolor-50">
+            <Link href="/#contactUs">CONTATO</Link>
           </li>
         </ul>
-      )}
+        <details
+          onToggle={() => setOpen(() => !open)}
+          className={`${sticky ? "flex" : "hidden"} ${open ? "menu-open" : ""}`}
+        >
+          <summary>
+            <div
+              className={`flex items-center justify-center p-4 w-36 h-36  cursor-pointer `}
+            >
+              <img
+                src="/menu_star.svg"
+                alt="Logo"
+                className="relative spinMenu -z-10"
+              />
+              {sticky ? (
+                <MenuButton
+                  isOpen={open}
+                  strokeWidth="6"
+                  color="#000000"
+                  lineProps={{ strokeLinecap: "round" }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                  width="24"
+                  height="20"
+                  className={`${
+                    open ? "hover:-rotate-90" : ""
+                  } fixed transition-all duration-500 ease-in-out`}
+                />
+              ) : null}
+            </div>
+          </summary>
+          <motion.div className={`menu-container bg-main-500`}>
+            TESTE
+          </motion.div>
+        </details>
+      </nav>
     </header>
   );
 };

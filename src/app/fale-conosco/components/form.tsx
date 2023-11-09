@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { set, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-export const ContactUs = () => {
+export const ContactForm = () => {
   const [reasonList, setReasonList] = useState<string[]>([]);
 
   const toggleReason = (reason: string) => {
@@ -56,47 +56,41 @@ export const ContactUs = () => {
   return (
     <section
       id="contactUs"
-      className="flex flex-col lg:pt-[7.5rem] pt-12 containerPadding items-center gap-24 mb-12"
+      className="w-full flex flex-col lg:pt-[7.5rem] pt-12 containerPadding items-center gap-24 pb-20 bg-main-200"
     >
-      <p className="font-bold lg:text-8xl md:text-5xl text-2xl text-fontcolor-100 max-w-screen-xl">
-        <span className="text-background-700">FALE CONOSCO!</span> DEIXE A SUA
-        INDICAÇÃO/ IDEIA / MENSAGEM ABAIXO.
-      </p>
+      <h3 className="contact">fale conosco</h3>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-12 w-full max-w-screen-xl"
       >
-        <div className="flex flex-col gap-3">
-          <label htmlFor="name">NOME *</label>
+        <div className="flex flex-col gap-6">
+          <label htmlFor="name">NOME*</label>
           <input
             type="text"
             id="name"
-            className="p-2 border-b border-b-fontcolor-100 outline-none focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300"
-            placeholder="digite seu nome"
+            className="p-2 border-b border-b-fontcolor-50 outline-none focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300"
             {...register("name")}
           />
           {errors.name && (
             <span className="text-background-200">{errors.name?.message}</span>
           )}
         </div>
-        <div className="flex flex-col gap-3">
-          <label htmlFor="email">EMAIL *</label>
+        <div className="flex flex-col gap-6">
+          <label htmlFor="email">EMAIL*</label>
           <input
             type="email"
             id="email"
-            className="p-2 border-b border-b-fontcolor-100 outline-none focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300"
-            placeholder="digite seu email"
+            className="p-2 border-b border-b-fontcolor-50 outline-none focus-within:border-b-background-700 focus-within:border-b-2 transition duration-300"
             {...register("email")}
           />
           {errors.email && (
             <span className="text-background-200">{errors.email?.message}</span>
           )}
         </div>
-        <div className="flex flex-col gap-3">
-          <label htmlFor="message">MENSAGEM *</label>
+        <div className="flex flex-col gap-6">
+          <label htmlFor="message">MENSAGEM*</label>
           <textarea
-            className="p-2 border border-fontcolor-100 outline-none focus-within:border-background-700 focus-within:border-2 transition duration-300"
-            placeholder="digite sua mensagem"
+            className="p-2 border border-fontcolor-50 outline-none focus-within:border-background-700 focus-within:border-2 transition duration-300"
             id="message"
             {...register("message")}
           />
@@ -106,8 +100,8 @@ export const ContactUs = () => {
             </span>
           )}
         </div>
-        <div className="flex flex-col gap-3">
-          <label>SELECIONE O MOTIVO DO CONTATO *</label>
+        <div className="flex flex-col gap-6">
+          <label>SELECIONE O MOTIVO DO CONTATO*</label>
           <ul className="flex items-center w-full lg:gap-8 md:gap-6 gap-4">
             <span
               className={`checkmark ${

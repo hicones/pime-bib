@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { MobileHeader } from "@/components/Header/MobileHeader";
-import { Footer } from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-
-const generalSans = localFont({ src: "../fonts/GeneralSans.ttf" });
 
 export const metadata: Metadata = {
   title: "BiB",
@@ -22,8 +18,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <link rel="icon" href="/paulistinho.svg" sizes="any" />
-      <body className={generalSans.className}>
+      <head>
+        <link rel="icon" href="/paulistinho.svg" sizes="any" />
+        <link
+          href="https://fonts.cdnfonts.com/css/general-sans"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/cabinet-grotesk"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/neutral-face"
+          rel="stylesheet"
+        />
+        <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+      </head>
+      <body>
         <Header />
         <MobileHeader />
         {children}

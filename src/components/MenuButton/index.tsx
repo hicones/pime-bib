@@ -10,6 +10,7 @@ interface Props {
   onClick?: () => void;
   width?: number | string;
   height?: number | string;
+  className?: any;
 }
 
 const MenuButton = ({
@@ -70,7 +71,7 @@ const MenuButton = ({
       preserveAspectRatio="none"
       width={width}
       height={height}
-      style={{ zIndex: "1", marginRight: "1rem" }}
+      style={{ zIndex: "1" }}
       {...props}
     >
       <motion.line

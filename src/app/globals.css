@@ -22,7 +22,7 @@ html,
 }
 
 body {
-  @apply bg-background-100 text-fontcolor-100;
+  @apply bg-main-100 text-fontcolor-100;
 }
 
 .parallax {
@@ -47,49 +47,46 @@ body {
   align-items: center;
 }
 
-h1,
-.title {
-  @apply lg:text-8xl md:text-7xl text-3xl font-bold flex gap-2;
+h1 {
+  @apply font-bold;
 }
 
-.text1 {
-  @apply font-medium text-2xl text-fontcolor-100;
+h2 {
+  @apply font-semibold;
 }
 
-.text2 {
-  @apply font-semibold text-2xl text-fontcolor-100;
+h3 {
+  @apply font-medium;
 }
 
-.text2White {
-  @apply font-semibold text-2xl text-fontcolor-50;
+h3.contact {
+  @apply font-normal lg:text-8xl md:text-6xl text-4xl text-fontcolor-50 uppercase whitespace-nowrap;
+  font-family: "Neutral Face", sans-serif;
 }
 
-.text3 {
-  @apply font-semibold text-4xl text-fontcolor-50;
-}
-
-.text4 {
-  @apply font-semibold text-4xl text-fontcolor-100;
-}
-
-.text5 {
-  @apply lg:text-[5rem] md:text-4xl text-2xl font-bold;
-}
-
-.text6 {
-  @apply font-normal lg:text-3xl md:text-xl text-base;
-}
-
-.text7 {
-  @apply font-medium lg:text-8xl md:text-5xl text-4xl;
+h4 {
+  @apply font-bold lg:text-[2rem] md:text-2xl  text-base text-black;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
 
 label {
-  @apply font-semibold text-3xl text-fontcolor-100;
+  @apply font-normal lg:text-[2.25rem] md:text-3xl text-xl text-fontcolor-50;
+  font-family: "Neutral Face", sans-serif;
 }
 
-strong {
-  @apply font-bold lg:text-[2.5rem] md:text-4xl text-2xl text-fontcolor-100;
+.text1 {
+  @apply font-normal text-2xl;
+  font-family: "Inter", sans-serif;
+}
+
+.text4 {
+  @apply font-normal lowercase text-black lg:text-3xl md:text-xl text-sm hover:opacity-75;
+  font-family: "Cabinet Grotesk", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.text5 {
+  @apply font-semibold lg:text-[2rem] md:text-2xl  text-base;
 }
 
 .hover-underline-animation {
@@ -120,7 +117,7 @@ strong {
 }
 
 .stickyHeader {
-  @apply py-2;
+  @apply py-0;
   background-color: rgba(25, 37, 54, 0.2);
 }
 
@@ -142,24 +139,32 @@ header.showMenu {
 }
 
 .formButton {
-  @apply bg-background-100 text-fontcolor-100 p-2 border border-fontcolor-100 font-medium text-5xl relative;
-  box-shadow: 16px 21px 0px 0px #2ca7eb;
+  @apply bg-transparent text-fontcolor-50 p-6 border border-fontcolor-50 font-normal lg:text-[2.25rem] md:text-3xl text-xl relative;
+  box-shadow: 16px 21px 0px 0px #f1c7d1;
+  font-family: "Neutral Face", sans-serif;
 }
-
-.paulistinho {
-  @apply absolute md:bottom-20 bottom-24 md:left-8 left-4 lg:w-52 w-36 md:w-44;
+.formButton:hover {
+  @apply brightness-75;
+  transition: all 0.3s ease-in-out;
 }
 
 .checkmark {
-  @apply p-2 cursor-pointer border border-fontcolor-100;
+  @apply p-2 cursor-pointer border border-fontcolor-50 text-fontcolor-50 font-normal uppercase lg:text-[2.25rem] md:text-3xl text-xl;
   transition: all 0.2s ease-in-out;
+  font-family: "Neutral Face", sans-serif;
+}
+
+.checkmark:hover {
+  @apply brightness-75;
 }
 
 .checked {
-  box-shadow: 8px 8px 0px 0px #2ca7eb;
+  box-shadow: 8px 8px 0px 0px #f1c7d1;
 }
 
 footer {
+  @apply bg-fixed bg-cover bg-no-repeat;
+
   z-index: 0;
 }
 
@@ -167,86 +172,51 @@ footer {
   @apply lg:px-20 md:px-10 px-4;
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+  @apply bg-transparent text-fontcolor-50;
+}
+
 /*  Categorias */
-
-.categoryContainer {
-  @apply w-full flex flex-col lg:flex-row lg:py-36 md:py-28 py-10 lg:justify-between gap-12 containerPadding;
-}
-
-.categoryContainerText {
-  @apply flex flex-col lg:gap-10 gap-8 w-full md:max-w-xl;
-}
-
-.categoryContainerText h2 {
-  @apply lg:text-7xl md:text-6xl text-2xl font-bold;
-}
-
-.categoryContainerText p {
-  @apply lg:text-3xl md:text-2xl text-base font-medium;
-}
-
-.categoryImage {
-  @apply lg:h-[800px] md:h-[400px] h-[14rem] lg:w-[40%] w-full flex items-center justify-center cursor-pointer overflow-hidden;
-  transition: all 0.4s ease-in-out;
-  background-size: 100% auto;
-}
-
-.categoryImage span {
-  @apply text-fontcolor-50 font-medium md:text-4xl text-base px-2 py-4 border border-fontcolor-50 absolute;
-}
-
-.desktopLink {
-  @apply hidden lg:flex max-w-fit items-center gap-2 font-medium text-4xl hover:border-2 hover:border-background-100 hover:px-6;
-  transition: all 0.2s ease-in-out;
-}
-
-.mobileLink {
-  @apply flex lg:hidden max-w-fit self-end items-center gap-2 font-medium text-4xl hover:border-2 hover:border-background-100 hover:px-6;
-  transition: all 0.2s ease-in-out;
-}
 
 /*  Sombras */
 
-.shadowRight {
-  box-shadow: 20px 20px 0px 0px #192536;
+/*  - - - - - - - - - - - - - - -  */
+
+.spinMenu {
+  animation: spin 3s infinite linear;
+  transition: all 0.3s ease-in-out;
 }
 
-.shadowRight:hover {
-  box-shadow: 20px 20px 0px 0px #fffefb;
-}
-
-.WhiteShadowRight {
-  box-shadow: 20px 20px 0px 0px #fffefb;
-}
-
-.WhiteShadowLeft {
-  box-shadow: -20px 20px 0px 0px #fffefb;
-
-  @media (max-width: 1024px) {
-    box-shadow: 20px 20px 0px 0px #fffefb;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-/*  - - - - - - - - - - - - - - -  */
-
-.pageTitle {
-  @apply flex items-center justify-start uppercase w-full lg:mt-52 md:mt-40 mt-36 containerPadding mb-12;
-}
-
-.cardActive {
-  @apply border-b-2 border-background-600 h-[25vh];
-}
-
-.cardActive div {
-  @apply border-t-2 border-l-2 border-background-600;
+details > summary {
+  list-style: none;
 }
 
 /*  - - - - - - - - - - - - - - -  */
 
-.motion-box {
+.menu-container {
+  position: fixed;
   width: 100%;
-  max-width: 500px;
-  height: 420px;
-  border-radius: 8px;
-  background: #00d2ff;
+  height: 100vh;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+  transform: translateY(-100%);
+  display: flex;
+  align-items: center;
+}
+
+details.menu-open .menu-container {
+  transform: translateY(0);
 }

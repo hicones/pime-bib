@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { MenuButton } from "../MenuButton";
 
 import { motion } from "framer-motion";
-import { Logo } from "../Logo";
 import { usePathname } from "next/navigation";
 import { getBackground } from "@/utils/getBackground";
 
@@ -39,7 +38,7 @@ export const MobileHeader = () => {
         href="/"
         className="ml-4 flex-1 flex items-center text-fontcolor-50 gap-2 font-bold text-5xl"
       >
-        <Logo color={getBackground(pathname)} />
+        Logo
       </Link>
       <MenuButton
         isOpen={open}
@@ -62,7 +61,7 @@ export const MobileHeader = () => {
           transition={{
             duration: 0.4,
           }}
-          className={`fixed top-0 right-0 w-full h-screen bg-background-700 flex flex-col items-center justify-center gap-14`}
+          className={`fixed top-0 right-0 w-full h-screen bg-main-700 flex flex-col items-center justify-center gap-14`}
         >
           <motion.ul
             initial={{
