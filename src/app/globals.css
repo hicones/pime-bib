@@ -22,7 +22,7 @@ html,
 }
 
 body {
-  @apply bg-main-100 text-fontcolor-100;
+  @apply bg-main-50 text-fontcolor-50;
 }
 
 .parallax {
@@ -34,6 +34,7 @@ body {
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
+  height: 4rem;
 }
 
 .parallax .scroller {
@@ -65,7 +66,12 @@ h3.contact {
 }
 
 h4 {
-  @apply font-bold lg:text-[2rem] md:text-2xl  text-base text-black;
+  @apply font-bold lg:text-[2rem] md:text-2xl  text-base;
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+h5 {
+  @apply font-medium lg:text-[2.5rem] md:text-3xl text-2xl uppercase;
   font-family: "Cabinet Grotesk", sans-serif;
 }
 
@@ -75,23 +81,47 @@ label {
 }
 
 .text1 {
-  @apply font-normal text-2xl;
-  font-family: "Inter", sans-serif;
+  @apply font-light text-2xl;
+  font-family: "Cabinet Grotesk", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.text3 {
+  @apply font-normal lg:text-6xl md:text-4xl text-2xl;
+  font-family: "Neutral Face", sans-serif;
+  line-height: 1.5;
+}
+
+.active {
+  @apply font-bold border-b-2 border-main-100;
 }
 
 .text4 {
-  @apply font-normal lowercase text-black lg:text-3xl md:text-xl text-sm hover:opacity-75;
+  @apply font-normal lowercase lg:text-3xl md:text-xl text-sm hover:opacity-75;
   font-family: "Cabinet Grotesk", sans-serif;
   transition: all 0.3s ease-in-out;
 }
 
 .text5 {
-  @apply font-semibold lg:text-[2rem] md:text-2xl  text-base;
+  @apply font-normal lg:text-[4rem] md:text-4xl  text-xl;
+  font-family: "Neutral Face", sans-serif;
 }
 
 .hover-underline-animation {
   display: inline-block;
   position: relative;
+}
+
+.neutral-face {
+  font-family: "Neutral Face", sans-serif;
+}
+
+.grotesk {
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
 }
 
 .hover-underline-animation:after {
@@ -117,8 +147,7 @@ label {
 }
 
 .stickyHeader {
-  @apply py-0;
-  background-color: rgba(25, 37, 54, 0.2);
+  @apply py-8;
 }
 
 header {
@@ -126,12 +155,13 @@ header {
 }
 
 header#desktop {
-  @apply hidden lg:flex z-10;
+  @apply hidden lg:flex;
+  z-index: 0;
 }
 
 header#mobile {
-  @apply flex lg:hidden z-10;
-  z-index: 1;
+  @apply flex lg:hidden;
+  z-index: 0;
 }
 
 header.showMenu {
@@ -164,8 +194,8 @@ header.showMenu {
 
 footer {
   @apply bg-fixed bg-cover bg-no-repeat;
-
-  z-index: 0;
+  z-index: -1;
+  background-attachment: fixed;
 }
 
 .containerPadding {
@@ -178,7 +208,28 @@ textarea {
   @apply bg-transparent text-fontcolor-50;
 }
 
-/*  Categorias */
+/*  Bg */
+
+.homeBackground {
+  width: 100%;
+  height: 100dvh;
+  background-image: url("/bg/home.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: backgroundAnimation 3s ease-in-out;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-size: 60%;
+  }
+  50% {
+    background-size: 60%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
 
 /*  Sombras */
 
@@ -202,21 +253,105 @@ details > summary {
   list-style: none;
 }
 
+.hoverText1 {
+  @apply w-fit h-fit py-6 px-10 relative text-fontcolor-50 rounded-full border border-main-100 bg-transparent overflow-hidden;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: "Neutral Face", sans-serif;
+}
+
+.hoverText2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hoverText2:first-child {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hoverText2:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #010100;
+  background-color: #fffefb;
+  transform: translateY(100%);
+  border-radius: 100%;
+  transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.hoverText1:hover > .hoverText2:last-child {
+  transform: translateY(0);
+  border-radius: 0;
+}
+
+.hoverText1:hover > .hoverText2:first-child {
+  transform: translateY(-100%);
+}
+
+.arrowDown:hover img {
+  animation: arrowDown 0.5s;
+}
+
+@keyframes arrowDown {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /*  - - - - - - - - - - - - - - -  */
 
 .menu-container {
   position: fixed;
   width: 100%;
-  height: 100vh;
-  z-index: -1;
+  height: 100dvh;
+  z-index: 9999;
   left: 0;
   top: 0;
   transition: 0.5s;
   transform: translateY(-100%);
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 details.menu-open .menu-container {
   transform: translateY(0);
+}
+
+/*  - - - - - CURSOR - - - - - - - - - -  */
+
+.cursor {
+  @apply hidden md:block;
+  background-color: #fffefb;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/*  - - - - - - - - - - - - - - -  */
+
+.categoryItemList {
+  @apply flex lg:px-16 px-4 py-10 items-center justify-start gap-4 overflow-hidden;
+}
+
+.categoryItemList span {
+  display: none;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s;
+}
+
+.categoryItemList:hover span {
+  display: flex;
 }

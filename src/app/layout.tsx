@@ -5,6 +5,8 @@ import { MobileHeader } from "@/components/Header/MobileHeader";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { Cursor } from "@/components/Cursor";
+import { VariantProvider } from "@/contexts/VariantContext";
 
 export const metadata: Metadata = {
   title: "BiB",
@@ -33,11 +35,18 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+        <link
+          href="https://fonts.cdnfonts.com/css/montserrat"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <Header />
         <MobileHeader />
-        {children}
+        <VariantProvider>
+          {children}
+          <Cursor />
+        </VariantProvider>
         <ToastContainer position="top-center" />
       </body>
     </html>
