@@ -34,7 +34,7 @@ export const Menu = () => {
           className={`flex items-center justify-center w-fit h-fit rounded-full p-1 border-2 outline-none absolute top-12 border-main-100 bg-main-50 `}
         >
           <div
-            className={`flex w-20 h-full justify-center items-center rounded-3xl bg-main-100`}
+            className={`flex w-20 h-full justify-center items-center rounded-3xl bg-main-100 z-50`}
           >
             <img src="/menu_icon.svg" alt="menu-icon" />
           </div>
