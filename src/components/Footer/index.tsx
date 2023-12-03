@@ -36,16 +36,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        <img
-          src="/logo.jpg"
-          alt="logo"
-          className="w-48 self-center rounded-full"
-        />
+        <img src="/logo.jpg" alt="logo" className="lg:w-48 w-32 rounded-full" />
       </nav>
       <div className="w-full bg-main-100 flex py-8 -z-10">
         <ParallaxText baseVelocity={-3}>
           <span className="text5 text-main-50 tracking-normal">
-            CONHEÇA O CENTRO
+            DESBRAVE O CENTRO
           </span>
           <img src="/star_footer.svg" alt="star" />
         </ParallaxText>

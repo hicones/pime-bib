@@ -23,10 +23,10 @@ export const SectionCategories = () => {
   return (
     <section
       ref={ref}
-      className="bg-main-100 flex flex-col w-full min-h-screen md:h-screen justify-between items-center"
+      className="bg-main-100 flex flex-col w-full lg:min-h-screen md:h-screen min-h-[50dvh] justify-between items-center"
       id="categories"
     >
-      <div className="flex w-full h-1/4 items-center lg:px-16 px-4">
+      <div className="flex w-full h-1/4 items-center lg:px-16 px-4 py-12 lg:py-0">
         <h3 className="text3 text-main-50">explore as categorias</h3>
       </div>
 

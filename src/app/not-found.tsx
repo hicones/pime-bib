@@ -13,7 +13,7 @@ export default function NotFound() {
       <div className="flex absolute bottom-16">
         <Link
           href="/"
-          className="hoverText1 lg:text-2xl text-base font-normal uppercase"
+          className="hoverText1 w-fit lg:text-2xl text-base font-normal uppercase"
         >
           <span className="hoverText2">voltar para página inicial</span>
           <span className="hoverText2">voltar para página inicial</span>

@@ -10,7 +10,7 @@ export const SectionYouKnow = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className="flex flex-col w-full min-h-screen md:h-screen justify-between items-center p-4">
+    <section className="flex flex-col w-full lg:min-h-screen min-h-[50dvh]  md:h-screen lg:justify-between justify-center items-center p-4 gap-8 ">
       <div
         ref={ref}
         className="flex flex-col max-w-screen-xl w-full my-0 mx-auto h-full gap-9 justify-center"
