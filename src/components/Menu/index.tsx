@@ -12,30 +12,14 @@ export const Menu = () => {
     <div className={`flex ${open ? "menu-open" : ""}`}>
       <div onClick={() => setOpen(() => true)}>
         <div
-          className={`flex items-center justify-center w-fit h-fit  cursor-pointer rounded-[2rem] border-2 transition duration-700 outline-none ${
-            variant === "dark"
-              ? "border-main-100 bg-main-50"
-              : "border-main-50 bg-main-100"
-          }  `}
+          className={`flex items-center justify-center w-fit h-fit  p-1 cursor-pointer rounded-full border-2 outline-none  border-main-100 bg-main-50 `}
         >
           <div
-            className={`flex w-20 h-full justify-center items-center rounded-3xl ${
-              variant === "dark" ? "bg-main-100" : "bg-main-50"
-            }`}
+            className={`flex w-20 h-full justify-center items-center rounded-3xl bg-main-100`}
           >
-            {variant === "dark" ? (
-              <img src="/menu_icon.svg" alt="menu-icon" />
-            ) : (
-              <img src="/menu_icon-light.svg" alt="menu-icon" />
-            )}
+            <img src="/menu_icon.svg" alt="menu-icon" />
           </div>
-          <h4
-            className={`p-2 text1 ${
-              variant === "dark" ? "text-main-100" : "text-main-50"
-            }`}
-          >
-            Início
-          </h4>
+          <h4 className={`p-2 text1 text-main-100`}>Início</h4>
         </div>
       </div>
 
@@ -44,30 +28,14 @@ export const Menu = () => {
         className={`menu-container bg-main-50 fixed top-0 left-0 w-screen h-screen flex flex-col justify-center  items-center inset-0 overflow-hidden`}
       >
         <div
-          className={`flex items-center justify-center w-fit h-fit  cursor-pointer rounded-[2rem] border-2 transition duration-700 outline-none absolute top-12 ${
-            variant === "dark"
-              ? "border-main-100 bg-main-50"
-              : "border-main-50 bg-main-100"
-          }  `}
+          className={`flex items-center justify-center w-fit h-fit rounded-full p-1 border-2 outline-none absolute top-12 border-main-100 bg-main-50 `}
         >
           <div
-            className={`flex w-20 h-full justify-center items-center rounded-3xl ${
-              variant === "dark" ? "bg-main-100" : "bg-main-50"
-            }`}
+            className={`flex w-20 h-full justify-center items-center rounded-3xl bg-main-100`}
           >
-            {variant === "dark" ? (
-              <img src="/menu_icon.svg" alt="menu-icon" />
-            ) : (
-              <img src="/menu_icon-light.svg" alt="menu-icon" />
-            )}
+            <img src="/menu_icon.svg" alt="menu-icon" />
           </div>
-          <h4
-            className={`p-2 text1 ${
-              variant === "dark" ? "text-main-100" : "text-main-50"
-            }`}
-          >
-            Início
-          </h4>
+          <h4 className={`p-2 text1 text-main-100`}>Menu</h4>
         </div>
         <section className="w-full max-w-screen-xl flex gap-12 lg:justify-evenly p-2 flex-wrap justify-center">
           <div className="flex flex-col gap-12">
