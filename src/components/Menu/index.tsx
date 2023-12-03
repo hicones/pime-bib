@@ -9,11 +9,8 @@ export const Menu = () => {
   const { variant } = useVariant();
 
   return (
-    <details
-      onToggle={() => setOpen(() => true)}
-      className={`flex ${open ? "menu-open" : ""}`}
-    >
-      <summary>
+    <div className={`flex ${open ? "menu-open" : ""}`}>
+      <div onClick={() => setOpen(() => true)}>
         <div
           className={`flex items-center justify-center w-fit h-fit  cursor-pointer rounded-[2rem] border-2 transition duration-700 outline-none ${
             variant === "dark"
@@ -40,12 +37,12 @@ export const Menu = () => {
             Início
           </h4>
         </div>
-      </summary>
+      </div>
       <div
         className={`menu-container bg-main-50 fixed top-0 left-0 w-screen h-screen flex flex-col justify-center  items-center`}
       >
         <div
-          className={`flex items-center justify-center w-fit h-fit  cursor-pointer rounded-[2rem] border-2 transition duration-700 outline-none absolute top-20 ${
+          className={`flex items-center justify-center w-fit h-fit  cursor-pointer rounded-[2rem] border-2 transition duration-700 outline-none absolute top-12 ${
             variant === "dark"
               ? "border-main-100 bg-main-50"
               : "border-main-50 bg-main-100"
@@ -122,7 +119,7 @@ export const Menu = () => {
         <svg
           viewBox="0 0 64 64"
           fill="none"
-          className="absolute top-20 right-10 cursor-pointer hover:opacity-80 transition duration-300 w-[52px] h-[52px] hover:-rotate-90"
+          className="absolute top-12 right-10 cursor-pointer hover:opacity-80 transition duration-300 w-[52px] h-[52px] hover:-rotate-90"
           onClick={() => setOpen(() => false)}
         >
           <g clip-path="url(#clip0_978_1861)">
@@ -138,6 +135,6 @@ export const Menu = () => {
           </defs>
         </svg>
       </div>
-    </details>
+    </div>
   );
 };

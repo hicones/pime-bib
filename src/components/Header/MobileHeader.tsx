@@ -24,7 +24,7 @@ export const MobileHeader = () => {
       id="mobile"
       className={`${
         sticky ? "stickyHeader" : ""
-      } w-full fixed py-16 mt-2 flex items-center justify-center`}
+      } w-full fixed py-10 flex items-center justify-center`}
     >
       <Menu />
     </header>

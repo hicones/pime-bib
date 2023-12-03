@@ -402,7 +402,7 @@ details > summary {
   overflow: hidden;
 }
 
-details.menu-open .menu-container {
+div.menu-open .menu-container {
   transform: translateY(0);
 }
 
