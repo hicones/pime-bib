@@ -40,7 +40,7 @@ export const Menu = () => {
           </div>
           <h4 className={`p-2 text1 text-main-100`}>Menu</h4>
         </div>
-        <section className="w-full max-w-screen-xl flex gap-12 lg:justify-evenly p-2 flex-wrap justify-center">
+        <section className="w-full max-w-screen-xl flex gap-12 lg:justify-evenly p-2 flex-wrap justify-center pt-12">
           <div className="flex flex-col gap-12">
             <Link
               href="/destaques"
