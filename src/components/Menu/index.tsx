@@ -38,8 +38,10 @@ export const Menu = () => {
           </h4>
         </div>
       </div>
+
       <div
-        className={`menu-container bg-main-50 fixed top-0 left-0 w-screen h-screen flex flex-col justify-center  items-center`}
+        aria-hidden="true"
+        className={`menu-container bg-main-50 fixed top-0 left-0 w-screen h-screen flex flex-col justify-center  items-center inset-0 overflow-hidden`}
       >
         <div
           className={`flex items-center justify-center w-fit h-fit  cursor-pointer rounded-[2rem] border-2 transition duration-700 outline-none absolute top-12 ${
