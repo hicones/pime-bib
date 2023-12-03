@@ -43,24 +43,31 @@ export const Menu = () => {
         <section className="w-full max-w-screen-xl flex gap-12 lg:justify-evenly p-2 flex-wrap justify-center pt-12">
           <div className="flex flex-col gap-12">
             <Link
-              href="/destaques"
+              href="/"
               className={`flex justify-start items-start gap-2 checkmark`}
             >
               01
+              <span className="text-fontcolor-50">início</span>
+            </Link>
+            <Link
+              href="/destaques"
+              className={`flex justify-start items-start gap-2 checkmark`}
+            >
+              02
               <span className="text-fontcolor-50">destaques</span>
             </Link>
             <Link
               href="/bares"
               className={`flex justify-start items-start gap-2 checkmark`}
             >
-              02
+              03
               <span className="text-fontcolor-50">bares</span>
             </Link>
             <Link
               href="/restaurantes"
               className={`flex justify-start items-start gap-2 checkmark`}
             >
-              03
+              04
               <span className="text-fontcolor-50">restaurantes</span>
             </Link>
           </div>
@@ -69,21 +76,21 @@ export const Menu = () => {
               href="/cultura"
               className={`flex justify-start items-start gap-2 checkmark`}
             >
-              04
+              05
               <span className="text-fontcolor-50">cultura</span>
             </Link>
             <Link
               href="/hitorico"
               className={`flex justify-start items-start gap-2 checkmark`}
             >
-              05
+              06
               <span className="text-fontcolor-50">historico</span>
             </Link>
             <Link
               href="/fale-conosco"
               className={`flex justify-start items-start gap-2 checkmark`}
             >
-              06
+              07
               <span className="text-fontcolor-50">fale conosco</span>
             </Link>
           </div>
