@@ -1,12 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
-import { useVariant } from "@/hooks/useVariant";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { getMenuTitle } from "@/utils/getBackground";
 
 export const Menu = () => {
   const [open, setOpen] = useState(false);
-  const { variant } = useVariant();
+
+  const pathname = usePathname();
 
   return (
     <div className={`flex ${open ? "menu-open" : ""}`}>
@@ -19,7 +20,9 @@ export const Menu = () => {
           >
             <img src="/menu_icon.svg" alt="menu-icon" />
           </div>
-          <h4 className={`p-2 text1 text-main-100`}>Início</h4>
+          <h4 className={`p-2 text1 text-main-100`}>
+            {getMenuTitle(pathname)}
+          </h4>
         </div>
       </div>
 

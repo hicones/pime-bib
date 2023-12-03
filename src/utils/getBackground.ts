@@ -1,21 +1,22 @@
 type path = string;
 
-export const getBackground = (path?: path) => {
+export const getMenuTitle = (path?: path) => {
   switch (path) {
     case "/":
-      return "#2CA7EB";
+      return "Início";
     case "/bares":
-      return "#E0006D";
+      return "Bares";
     case "/restaurantes":
-      return "#FF7525";
-    case "/gratuitos":
-      return "#1A7F43";
+      return "Restaurantes";
+    case "/cultura":
+      return "Cultura";
     case "/destaques":
-      return "#FCCE0B";
+      return "Destaques";
     case "/historico":
-      return "#2CA7EB";
-
+      return "Histórico";
+    case "/fale-conosco":
+      return "Fale Conosco";
     default:
-      return "#2CA7EB";
+      return "início";
   }
 };
