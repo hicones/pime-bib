@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://api.bomibarato.com/api/rest",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     "Content-Type": "application/json",
     "x-hasura-admin-secret": process.env.NEXT_PUBLIC_API_SECRET,

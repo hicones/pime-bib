@@ -41,13 +41,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        <MobileHeader />
         <VariantProvider>
+          <Header />
+          <MobileHeader />
           {children}
           <Cursor />
+          <ToastContainer position="top-center" />
         </VariantProvider>
-        <ToastContainer position="top-center" />
       </body>
     </html>
   );

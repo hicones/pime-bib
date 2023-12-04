@@ -48,7 +48,7 @@ export const ContactForm = () => {
   return (
     <section
       id="contactUs"
-      className="max-w-screen-xl w-full flex flex-col lg:pt-[14rem] pt-36 gap-24 pb-20 lg:p-0 px-8"
+      className="max-w-screen-2xl w-full flex flex-col lg:pt-[14rem] pt-36 gap-24 pb-20 lg:p-0 px-8"
     >
       <h3 className="contact">fale conosco</h3>
       <form

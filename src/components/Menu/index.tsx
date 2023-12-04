@@ -30,7 +30,7 @@ export const Menu = () => {
         aria-hidden="true"
         className={`menu-container bg-main-50 fixed top-0 left-0 w-screen h-screen flex flex-col justify-center  items-center inset-0 overflow-hidden`}
       >
-        <section className="w-full max-w-screen-xl flex gap-12 lg:justify-evenly p-2 flex-wrap justify-center pt-28">
+        <section className="w-full max-w-screen-2xl flex gap-12 lg:justify-evenly p-2 flex-wrap justify-center pt-28">
           <div className="flex flex-col gap-12">
             <Link
               href="/"

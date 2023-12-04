@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import React, { createContext, useEffect, useState } from "react";
 
 type props = {
@@ -16,8 +17,7 @@ const VariantContext = createContext({} as IVariantContext);
 //Provider
 const VariantProvider = ({ children }: props) => {
   const [variant, setVariant] = useState("dark");
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "";
+  const pathname = usePathname();
 
   useEffect(() => {
     if (pathname) {

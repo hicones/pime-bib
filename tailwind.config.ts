@@ -25,7 +25,7 @@ const config: Config = {
         },
         fontcolor: {
           50: "#FFFEFB",
-          100: "#192536",
+          100: "#010100",
         },
       },
     },

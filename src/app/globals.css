@@ -96,6 +96,10 @@ label {
   @apply font-bold border-b-2 border-main-100;
 }
 
+.activeDark {
+  @apply font-bold border-b-2 border-main-50;
+}
+
 .text4 {
   @apply font-normal lowercase lg:text-3xl md:text-xl text-sm hover:opacity-75;
   font-family: "Cabinet Grotesk", sans-serif;
@@ -147,8 +151,7 @@ label {
 }
 
 .stickyHeader {
-  @apply py-2;
-  background-color: rgba(25, 37, 54, 0.2);
+  @apply py-4;
 }
 
 header {
@@ -163,10 +166,6 @@ header#desktop {
 header#mobile {
   @apply flex lg:hidden;
   z-index: 0;
-}
-
-header.showMenu {
-  @apply flex;
 }
 
 .formButton {
@@ -316,7 +315,7 @@ textarea {
 
 /*  - - - - - - - - - - - - - - -  */
 
-.spinMenu {
+.spin {
   animation: spin 3s infinite linear;
   transition: all 0.3s ease-in-out;
 }
@@ -328,10 +327,6 @@ textarea {
   100% {
     transform: rotate(360deg);
   }
-}
-
-details > summary {
-  list-style: none;
 }
 
 .hoverText1 {
@@ -425,16 +420,28 @@ div.menu-open .menu-container {
 /*  - - - - - - - - - - - - - - -  */
 
 .categoryItemList {
-  @apply flex lg:px-16 px-4 py-10 items-center justify-start gap-4 overflow-hidden;
+  @apply flex lg:px-0 px-4 py-10 items-center justify-start gap-4 overflow-hidden;
 }
 
-.categoryItemList span {
-  display: none;
-  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s;
+.categoryItemList div,
+.establishmentItemList div {
+  @apply flex items-center max-w-screen-2xl w-full mx-auto gap-4;
 }
 
-.categoryItemList:hover span {
-  display: flex;
+.categoryItemList span,
+.establishmentItemList span {
+  transform: translateX(-1000%);
+  transition: all cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+
+.categoryItemList:hover span,
+.establishmentItemList:hover span {
+  transform: translateX(0);
+}
+
+.establishmentItemList {
+  @apply flex lg:px-0 px-4 py-10 items-center justify-start gap-4 overflow-hidden font-normal lg:text-[2.5rem] md:text-3xl text-xl;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
 
 .contactFormDiv input::placeholder,
@@ -447,4 +454,9 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.filterButton {
+  @apply w-fit flex gap-4 items-center justify-center h-fit py-3 px-7 rounded-full border-2 uppercase cursor-pointer font-normal md:text-2xl text-xl hover:backdrop-brightness-95 transition duration-300;
+  font-family: "Cabinet Grotesk", sans-serif;
 }
