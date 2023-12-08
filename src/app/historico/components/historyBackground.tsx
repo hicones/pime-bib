@@ -13,7 +13,7 @@ export const HistoryBackground = () => {
         sua vibe
       </span>
       <span className="font-normal grotesk absolute bottom-5 w-full text-center lg:text-[2rem] md:text-2xl text-base uppercase">
-        DESCUBRA
+        DESCUBRA O CENTRO HISTÓRICO
       </span>
     </section>
   );

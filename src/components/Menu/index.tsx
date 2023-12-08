@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { getMenuTitle } from "@/utils/getBackground";
+import { getMenuTitle } from "@/utils";
 
 export const Menu = () => {
   const [open, setOpen] = useState(false);

@@ -197,9 +197,8 @@ export const EstablishmentsList = (data: any) => {
           })}
         </ul>
       )}
-
       {data.data.length <= 0 && (
-        <h3 className="grotesk text-fontcolor-190 font-normal lg:text-5xl md:text-3xl text-xl text-center">
+        <h3 className="grotesk text-fontcolor-100 font-normal lg:text-5xl md:text-3xl text-xl text-center">
           NÃO CONSEGUIMOS ENCONTRAR RESULTADOS
         </h3>
       )}

@@ -5,7 +5,7 @@ import ParallaxText from "../ParallaxText";
 export const Footer = () => {
   return (
     <footer className={`w-full flex flex-col relative bg-main-50`}>
-      <nav className="w-full flex md:flex-row flex-col lg:px-24 md:px-16 px-4 lg:py-20 md:py-10 py-8 place-items-start gap-12 justify-between">
+      <nav className="max-w-screen-2xl mx-auto w-full flex lg:px-0 px-4 lg:py-20 md:py-10 py-8 place-items-start gap-12 justify-between">
         <div className="flex lg:gap-24 md:flex-row flex-col gap-12">
           <div className="flex flex-col gap-6 ">
             <h4 className="">DIGA OI</h4>
@@ -36,7 +36,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        <img src="/logo.jpg" alt="logo" className="lg:w-48 w-32 rounded-full" />
+        <img
+          src="/logo.jpg"
+          alt="logo"
+          className="lg:w-48 w-20 rounded-full self-end"
+        />
       </nav>
       <div className="w-full bg-main-100 flex py-8 -z-10">
         <ParallaxText baseVelocity={-3}>

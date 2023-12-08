@@ -160,12 +160,12 @@ header {
 
 header#desktop {
   @apply hidden lg:flex;
-  z-index: 0;
+  z-index: 10;
 }
 
 header#mobile {
   @apply flex lg:hidden;
-  z-index: 0;
+  z-index: 10;
 }
 
 .formButton {

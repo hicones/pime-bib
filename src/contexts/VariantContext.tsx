@@ -23,6 +23,9 @@ const VariantProvider = ({ children }: props) => {
     if (pathname) {
       setVariant("dark");
     }
+    if (pathname === "/pesquisa") {
+      setVariant("light");
+    }
   }, [pathname]);
 
   return (
