@@ -11,15 +11,15 @@ export const Footer = () => {
             <h4 className="">DIGA OI</h4>
             <ul>
               <li className="text4">
+                <Link href="/fale-conosco">Fale conosco</Link>
+              </li> 
+              <li className="text4">
                 <a
                   href="mailto:contato.paulistinho@bomibarato.com"
                   target="_blank"
                 >
                   contato.paulistinho@bomibarato.com
                 </a>
-              </li>
-              <li className="text4">
-                <Link href="/fale-conosco">clique aqui</Link>
               </li>
             </ul>
           </div>

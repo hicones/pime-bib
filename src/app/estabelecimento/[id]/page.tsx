@@ -52,7 +52,7 @@ export default async function EstablishmentsPage({
               )}
             </ul>
           </div>
-          <p className="uppercase font-normal neutral-face lg:text-[2rem] md:text-3xl text-xl z-0">
+          <p className="uppercase font-normal neutral-face lg:text-3xl md:text-2xl text-xl z-0">
             {data.establishment_by_pk.description}
           </p>
         </div>
@@ -77,12 +77,12 @@ export default async function EstablishmentsPage({
           quando posso ir?
         </h2>
         <div className="flex w-full items-center justify-end">
-          <ul className="w-fit flex flex-col gap-14">
+          <ul className="w-fit flex flex-col gap-10">
             {data.establishment_by_pk.opening_hours.map(
               (e: any, index: any) => (
                 <li
                   key={index}
-                  className="w-fit grotesk font-medium lg:text-[4rem] md:text-5xl text-xl"
+                  className="w-fit grotesk font-medium lg:text-[3rem] md:text-3xl text-xl"
                 >
                   {e}
                 </li>
@@ -171,6 +171,8 @@ export default async function EstablishmentsPage({
             moovit
           </a>
           <a
+            href={data.establishment_by_pk.coordinates}
+            target="_blank"
             className="filterButton hover:opacity-75 transition"
             style={{
               borderColor: fontTheme === "dark" ? "#010100" : "#FFFEFB",
