@@ -15,7 +15,7 @@ export default async function Highlights() {
     <main className="flex min-h-screen flex-col items-center">
       <HighlightsBackground />
       <div className="bg-main-200 w-full h-full flex flex-col">
-        <EstablishmentsList data={data.establishment} />
+        <EstablishmentsList data={data?.establishment} />
         <Pagination variant="dark" />
       </div>
     </main>

@@ -15,7 +15,7 @@ export default async function Bars() {
     <main className="flex min-h-screen flex-col items-center">
       <BarsBackground />
       <div className="bg-main-300 w-full h-full flex flex-col">
-        <EstablishmentsList data={data.establishment} />
+        <EstablishmentsList data={data?.establishment} />
         <Pagination variant="light" />
       </div>
     </main>

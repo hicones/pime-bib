@@ -18,7 +18,7 @@ export const EstablishmentsList = (data: any) => {
 
   useEffect(() => {
     if (activeFilters.length > 0) {
-      const filtred = data.data.filter((item: EstablishmentProps) => {
+      const filtred = data?.data?.filter((item: EstablishmentProps) => {
         if (activeFilters.includes("accessibility")) {
           if (!item.accessibility) {
             return false;
@@ -55,18 +55,18 @@ export const EstablishmentsList = (data: any) => {
       }
       setFiltredData(filtred);
     } else {
-      setFiltredData(data.data);
+      setFiltredData(data?.data);
     }
-  }, [activeFilters, data.data]);
+  }, [activeFilters, data?.data]);
 
   return (
     <section className="min-h-screen h-auto w-full flex flex-col gap-24">
       <div className="flex w-full max-w-screen-2xl mx-auto justify-between mt-[10rem] text-fontcolor-50 flex-wrap gap-4 p-4 md:p-2 lg:p-0">
         <div className="flex gap-5 flex-wrap">
-          {data.length > 0 && (
+          {data?.length > 0 && (
             <Link
               href={`estabelecimento/${
-                data?.data[Math.floor(Math.random() * data.data.length)].id
+                data?.data[Math.floor(Math.random() * data?.data?.length)].id
               }`}
               className="filterButton border-fontcolor-50"
             >
@@ -179,7 +179,7 @@ export const EstablishmentsList = (data: any) => {
         </ul>
       )}
 
-      {data.data.length <= 0 && (
+      {data?.data?.length <= 0 && (
         <h3 className="grotesk text-fontcolor-50 font-normal lg:text-5xl md:text-3xl text-xl text-center">
           NÃO CONSEGUIMOS ENCONTRAR RESULTADOS
         </h3>

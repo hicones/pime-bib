@@ -15,8 +15,8 @@ export default async function Highlights() {
     <main className="flex min-h-screen flex-col items-center">
       <HistoryBackground />
       <div className="bg-main-600 w-full h-full flex flex-col">
-        <EstablishmentsList data={data.establishment} />
-        {data.establishment.length > 0 && <Pagination variant="dark" />}
+        <EstablishmentsList data={data?.establishment} />
+        {data?.establishment.length > 0 && <Pagination variant="dark" />}
       </div>
     </main>
   );

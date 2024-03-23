@@ -5,9 +5,9 @@ import Link from "next/link";
 export const EstablishmentsList = (data: any) => {
   return (
     <section className="h-auto w-full flex flex-col gap-24 justify-between">
-      {data.data.length > 0 && (
+      {data?.data?.length > 0 && (
         <ul className="mt-12 divide-y border-t border-b border-main-50 divide-main-50 text-main-50">
-          {data.data?.map((item: EstablishmentProps) => {
+          {data?.data?.map((item: EstablishmentProps) => {
             return (
               <Link
                 href={`/estabelecimento/${item.id}`}

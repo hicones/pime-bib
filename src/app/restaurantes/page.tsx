@@ -15,8 +15,8 @@ export default async function Restaurants() {
     <main className="flex min-h-screen flex-col items-center">
       <RestaurantsBackground />
       <div className="bg-main-400 w-full h-full flex flex-col">
-        <EstablishmentsList data={data.establishment} />
-        {data.establishment.length > 0 && <Pagination variant="light" />}
+        <EstablishmentsList data={data?.establishment} />
+        {data?.establishment.length > 0 && <Pagination variant="light" />}
       </div>
     </main>
   );
