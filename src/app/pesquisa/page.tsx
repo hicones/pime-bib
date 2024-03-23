@@ -1,29 +1,14 @@
-"use client";
 import { getEstablishmentBySearch } from "@/services/requests";
 import { EstablishmentsList } from "./components/establishmentsList";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
-export default function Restaurants() {
-  const api_url = process.env.NEXT_PUBLIC_API_URL;
-  const api_key = process.env.NEXT_PUBLIC_API_SECRET;
+export default async function Restaurants({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const search = searchParams.search as string;
 
-  const searchParams = useSearchParams();
-  const search = searchParams.get("search");
-
-  const [data, setData] = useState<any>({});
-
-  useEffect(() => {
-    if (search) {
-      (async () => {
-        const data = await getEstablishmentBySearch(api_url, api_key, search);
-
-        setData(data);
-
-        console.log(data);
-      })();
-    }
-  }, [api_key, api_url, search]);
+  const data = await getEstablishmentBySearch(search);
 
   return (
     <main className="flex min-h-screen flex-col bg-main-200 lg:pt-64 md:pt-52 pt-32 px-2">
@@ -32,9 +17,9 @@ export default function Restaurants() {
         <p className="font-light border-b border-black">{search}</p>
       </span>
 
-      {data?.establishment && data.establishment?.length > 0 && (
+      {data?.establishment && data?.establishment?.length > 0 && (
         <>
-          <EstablishmentsList data={data.establishment} />
+          <EstablishmentsList data={data?.establishment} />
         </>
       )}
       {data?.establishment?.length === 0 && (

@@ -2,7 +2,7 @@
 "use client";
 import { useVariant } from "@/hooks/useVariant";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
@@ -10,6 +10,7 @@ export const Header = () => {
   const { variant } = useVariant();
   const [sticky, setSticky] = useState(false);
   const [search, setSearch] = useState("");
+  const router = useRouter();
 
   const changeSticky = () => {
     if (window.scrollY >= 100) {
@@ -21,7 +22,7 @@ export const Header = () => {
 
   const onSearch = () => {
     if (search) {
-      window.location.href = `/pesquisa?search=${search}`;
+      router.push(`/pesquisa?${new URLSearchParams({ search })}`);
     }
   };
 

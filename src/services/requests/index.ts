@@ -4,48 +4,52 @@ interface EstablishmentResponse {
   establishment_by_pk: EstablishmentProps;
 }
 
-export async function fetchEstablishments(
-  url = "",
-  api_secret = "",
-  data = {}
-) {
-  const response = await fetch(`${url}/listestablishmentbytype`, {
-    method: "POST",
-    cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-      "x-hasura-admin-secret": api_secret,
-    },
-    body: JSON.stringify(data),
-  });
-  return response.json();
-}
-
-export async function getEstablishment(url = "", api_secret = "", id = "") {
-  const response = await fetch(`${url}/getestablishmentbyid?id=${id}`, {
-    method: "GET",
-    cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-      "x-hasura-admin-secret": api_secret,
-    },
-  });
-  return response.json();
-}
-
-export async function getEstablishmentBySearch(
-  url = "",
-  api_secret = "",
-  filter = ""
-) {
+export async function fetchEstablishments(data = {}) {
   const response = await fetch(
-    `${url}/getestablishmentbyfilter?filter=${filter}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/listestablishmentbytype`,
     {
-      method: "GET",
-      cache: "no-cache",
+      method: "POST",
+      cache: "default",
       headers: {
         "Content-Type": "application/json",
-        "x-hasura-admin-secret": api_secret,
+        "x-hasura-admin-secret": process.env.NEXT_PUBLIC_API_SECRET
+          ? process.env.NEXT_PUBLIC_API_SECRET
+          : "",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  return response.json();
+}
+
+export async function getEstablishment(id: string) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/getestablishmentbyid?id=${id}`,
+    {
+      method: "GET",
+      cache: "default",
+      headers: {
+        "Content-Type": "application/json",
+        "x-hasura-admin-secret": process.env.NEXT_PUBLIC_API_SECRET
+          ? process.env.NEXT_PUBLIC_API_SECRET
+          : "",
+      },
+    }
+  );
+  return response.json();
+}
+
+export async function getEstablishmentBySearch(filter: string) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/getestablishmentbyfilter?filter=${filter}`,
+    {
+      method: "GET",
+      cache: "default",
+      headers: {
+        "Content-Type": "application/json",
+        "x-hasura-admin-secret": process.env.NEXT_PUBLIC_API_SECRET
+          ? process.env.NEXT_PUBLIC_API_SECRET
+          : "",
       },
     }
   );

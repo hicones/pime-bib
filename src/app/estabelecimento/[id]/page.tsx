@@ -6,17 +6,14 @@ export default async function EstablishmentsPage({
 }: {
   params: { id: string };
 }) {
-  const api_url = process.env.NEXT_PUBLIC_API_URL;
-  const api_key = process.env.NEXT_PUBLIC_API_SECRET;
-
-  const data = await getEstablishment(api_url, api_key, params.id);
+  const data = await getEstablishment(params.id);
 
   const background = await getEstablishmentBackground(
-    data.establishment_by_pk.establishment_types.map((e: any) => e.type)
+    data?.establishment_by_pk.establishment_types.map((e: any) => e.type)
   );
 
   const fontTheme = await getFontTheme(
-    data.establishment_by_pk.establishment_types.map((e: any) => e.type)
+    data?.establishment_by_pk.establishment_types.map((e: any) => e.type)
   );
 
   return (
@@ -34,10 +31,10 @@ export default async function EstablishmentsPage({
         <div className="flex flex-col justify-between max-w-xl lg:pb-40 pb-12 gap-8">
           <div className="flex flex-col gap-8">
             <h1 className="neutral-face lg:text-[5rem] md:text-6xl text-4xl font-normal uppercase">
-              {data.establishment_by_pk.name}
+              {data?.establishment_by_pk.name}
             </h1>
             <ul className="flex gap-4 flex-wrap">
-              {data.establishment_by_pk.establishment_types.map(
+              {data?.establishment_by_pk.establishment_types.map(
                 (e: any, index: any) => (
                   <span
                     key={index}
@@ -53,14 +50,14 @@ export default async function EstablishmentsPage({
             </ul>
           </div>
           <p className="uppercase font-normal neutral-face lg:text-3xl md:text-2xl text-xl z-0">
-            {data.establishment_by_pk.description}
+            {data?.establishment_by_pk.description}
           </p>
         </div>
         <div className="flex lg:w-3/6 md:w-4/5 w-[85dvw] lg:pb-40 pb-12">
           <div
             className="w-full h-[80dvh] self-center"
             style={{
-              backgroundImage: `url(${data.establishment_by_pk.image})`,
+              backgroundImage: `url(${data?.establishment_by_pk.image})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
@@ -78,7 +75,7 @@ export default async function EstablishmentsPage({
         </h2>
         <div className="flex w-full items-center justify-end">
           <ul className="w-fit flex flex-col gap-10">
-            {data.establishment_by_pk.opening_hours.map(
+            {data?.establishment_by_pk.opening_hours.map(
               (e: any, index: any) => (
                 <li
                   key={index}
@@ -92,10 +89,10 @@ export default async function EstablishmentsPage({
         </div>
         <div className="flex flex-col gap-14">
           <span className="flex gap-2 grotesk font-bold lg:text-4xl md:text-2xl text-lg ">
-            {data.establishment_by_pk.payment_options.includes("gratis")
+            {data?.establishment_by_pk.payment_options.includes("gratis")
               ? "Gratis"
               : "As formas de pagamento para os ingressos incluem " &&
-                data.establishment_by_pk.payment_options.map(
+                data?.establishment_by_pk.payment_options.map(
                   (e: any, index: any) => <p key={index}>{e}</p>
                 )}
           </span>
@@ -171,7 +168,7 @@ export default async function EstablishmentsPage({
             moovit
           </a>
           <a
-            href={data.establishment_by_pk.coordinates}
+            href={data?.establishment_by_pk.coordinates}
             target="_blank"
             className="filterButton hover:opacity-75 transition"
             style={{
@@ -183,12 +180,12 @@ export default async function EstablishmentsPage({
         </ul>
 
         <p className="grotesk font-bold lg:text-4xl md:text-2xl text-lg">
-          {data.establishment_by_pk.address}
+          {data?.establishment_by_pk.address}
         </p>
 
         <iframe
           className="rounded-2xl w-full lg:h-[30rem]"
-          src={data.establishment_by_pk.coordinates}
+          src={data?.establishment_by_pk.coordinates}
         ></iframe>
       </section>
     </main>
